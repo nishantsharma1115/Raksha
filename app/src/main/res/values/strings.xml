@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Raksha</string>
-    <string name="onboarding1">Add your safe houses view them in map whenever  you need them</string>
-    <string name="onboarding2">See all your safe houses  and also all nearby police stations  in your map</string>
+    <string name="onboarding1">Stay Safe with Raksha App Send SOS message to all your contacts via WhatsApp and SMS Call Police when in need</string>
+    <string name="onboarding2">Add all your safe houses to help you when you are in need</string>
+    <string name="onboarding3">See all your safe houses in your map and rush to the nearest when in need</string>
     <string name="safe_house">Safe house</string>
 </resources>

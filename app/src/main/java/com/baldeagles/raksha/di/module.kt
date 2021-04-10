@@ -1,6 +1,7 @@
 package com.baldeagles.raksha.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.core.view.ViewCompat
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -31,5 +32,9 @@ object module {
     @Provides
     @Singleton
     fun providesDao(database: DataBase) = database.dao
+
+    @Provides
+    @Singleton
+    fun providesSharedPref(@ApplicationContext context: Context): SharedPreferences = context.getSharedPreferences("RAKSHA",Context.MODE_PRIVATE)
 
 }

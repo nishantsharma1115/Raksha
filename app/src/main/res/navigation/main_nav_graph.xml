@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_mapFragment"
             app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewSafeHousesInMapFragment"
+            app:destination="@id/viewSafeHousesInMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
@@ -27,4 +30,9 @@
         android:name="com.baldeagles.raksha.ui.fragments.SafeHouseFragment"
         android:label="fragment_safe_house"
         tools:layout="@layout/fragment_safe_house" />
+    <fragment
+        android:id="@+id/viewSafeHousesInMapFragment"
+        android:name="com.baldeagles.raksha.ui.fragments.ViewSafeHousesInMapFragment"
+        android:label="fragment_view_safehouses_in_map"
+        tools:layout="@layout/fragment_view_safehouses_in_map" />
 </navigation>

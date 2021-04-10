@@ -54,7 +54,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
         itemTouchHelper.attachToRecyclerView(binding.safeHouseRecycle)
 
-
+        binding.viewInMapButton.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewSafeHousesInMapFragment)
+        }
 
         binding.addSafeHouseFab.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_safeHouseFragment)

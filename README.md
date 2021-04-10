@@ -8,6 +8,8 @@
 
 **Raksha** is app in which users can see the address of the place or people he/she add so that in case of emergency he/she can contact the place or people or stay there. This app demonstrates use of *Modern Android development* tools.
 
+[![Raksha](https://img.shields.io/badge/Raksha✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/nishantsharma1115/Raksha/blob/master/testApk/raksha.apk)
+
 ## About
 
  It uses ROOM database i.e. Phone storage as its backend. The main aim to use the phone storage is **Your data is completely safe in your phone**

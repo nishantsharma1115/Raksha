@@ -71,11 +71,6 @@
 
  ![](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
-  ## Contact
- If you need any help, you can connect with me.
-
- Visit:- [Nishant Sharma](https://nishantsharma1115.github.io) | [Vaibhav Jaiswal](https://vaibhav2002.github.io)
-
 ## Technology Stack:
   1) Kotlin
   2) XML

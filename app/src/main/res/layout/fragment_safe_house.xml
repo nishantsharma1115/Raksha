@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.SafeHouseFragment">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="Safe House Fragment" />
+        android:id="@+id/txtAdd"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="ADD"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/txtSafeHouse"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Safehouse"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/txtAdd"
+        app:layout_constraintTop_toBottomOf="@id/txtAdd" />
+
+    <EditText
+        android:id="@+id/edtSafeHouseName"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/search_bg"
+        android:hint="Safehouse Name"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txtSafeHouse"
+        app:layout_constraintTop_toBottomOf="@id/txtSafeHouse" />
+
+    <ImageView
+        android:id="@+id/imgLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="Image"
+        android:src="@drawable/location_icon"
+        app:layout_constraintEnd_toEndOf="@id/edtSafeHouseName"
+        app:layout_constraintTop_toBottomOf="@id/edtSafeHouseName" />
+
+    <TextView
+        android:id="@+id/txtAddressViaMap"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Add Address via Map"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/imgLocation"
+        app:layout_constraintEnd_toStartOf="@id/imgLocation"
+        app:layout_constraintTop_toTopOf="@id/imgLocation" />
+
+    <EditText
+        android:id="@+id/edtSafeHouseAddress"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="no"
+        android:background="@drawable/search_bg"
+        android:gravity="top|start"
+        android:hint="Safehouse Address"
+        android:inputType="textMultiLine"
+        android:labelFor="@id/edtSafeHouseName"
+        android:lines="8"
+        android:maxLines="20"
+        android:padding="20dp"
+        android:scrollbars="vertical"
+        android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgLocation" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="Save"
+        app:icon="@drawable/check_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
 
 ***You can Install and test latest Raksha app from below 👇***
 
-[![Foodles](https://img.shields.io/badge/NextLife✅-APK-red.svg?style=for-the-badge&logo=android)](//Link to Debug app)
+[![Raksha](https://img.shields.io/badge/Raksha✅-APK-red.svg?style=for-the-badge&logo=android)](//Link to Debug app)
 
 ## About
 

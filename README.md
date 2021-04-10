@@ -6,8 +6,6 @@
 
 ***You can Install and test latest Raksha app from below 👇***
 
-[![Raksha](https://img.shields.io/badge/Raksha✅-APK-red.svg?style=for-the-badge&logo=android)](//Link to Debug app)
-
 ## About
 
  It uses ROOM database i.e. Phone storage as its backend. The main aim to use the phone storage is **Your data is completely safe in your phone**

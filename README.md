@@ -1,4 +1,4 @@
-![](media/design.png)
+![](media/design.jpg)
 
 # **Raksha** 
 
@@ -20,8 +20,8 @@
 
 ||||
 |:----------------------------------------:|:-----------------------------------------:|:-----------------------------------------: |
-| ![](media/SPlashScreen.jpg) | ![](media/Onboarding 1.jpg) | ![](media/Onbording 2.jpg) |
-| ![](media/Onbording3.jpg) | ![](media/homescreen.jpg) | ![](media/add safehouse.jpg)
+| ![](media/SPlashScreen.jpg) | ![](media/Onboarding1.jpg) | ![](media/Onbording2.jpg) |
+| ![](media/Onbording3.jpg) | ![](media/homescreen.jpg) | ![](media/addsafehouse.jpg)
 
 ## Built With 🛠
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.

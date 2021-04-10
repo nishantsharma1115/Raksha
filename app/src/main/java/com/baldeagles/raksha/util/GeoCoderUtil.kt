@@ -3,7 +3,7 @@ package com.baldeagles.raksha.util
 import android.content.Context
 import android.location.Address
 import android.location.Geocoder
-import com.baldeagles.raksha.data.models.LocationModelForMap
+import com.baldeagles.raksha.data.models.LocationModel
 import com.google.android.gms.common.util.CollectionUtils
 import java.util.*
 
@@ -13,12 +13,16 @@ object GeoCoderUtil {
         context: Context,
         latitude: String,
         longitude: String,
-        callback: LoadDataCallback<LocationModelForMap>
+        callback: LoadDataCallback<LocationModel>
     ) {
-        var address = ""
-        var cityName = ""
-        var areaName = ""
-        val locationModelForMap: LocationModelForMap
+        var currentLatitude = 0.0
+        var currentLongitude = 0.0
+        var currentAddress = ""
+        var currentLocality = ""
+        var currentCity = ""
+        var currentState = ""
+        var currentCountry = ""
+        val locationModel: LocationModel
         try {
             val addresses: MutableList<Address>
             val geocoder = Geocoder(context, Locale.ENGLISH)
@@ -27,20 +31,24 @@ object GeoCoderUtil {
             if (!CollectionUtils.isEmpty(addresses)) {
                 val fetchedAddress = addresses[0]
                 if (fetchedAddress.maxAddressLineIndex > -1) {
-                    address = fetchedAddress.getAddressLine(0)
-                    fetchedAddress.locality?.let {
-                        cityName = it
-                    }
-                    fetchedAddress.subLocality?.let {
-                        areaName = it
-                    }
+                    currentAddress = fetchedAddress.getAddressLine(0)
+                    currentLatitude = fetchedAddress.latitude
+                    currentLongitude = fetchedAddress.longitude
+                    currentLocality = fetchedAddress.featureName
+                    currentCity = fetchedAddress.locality
+                    currentState = fetchedAddress.adminArea
+                    currentCountry = fetchedAddress.countryName
                 }
-                locationModelForMap = LocationModelForMap().apply {
-                    locationAddress = address
-                    locationCityName = cityName
-                    locationAreaName = areaName
+                locationModel = LocationModel().apply {
+                    this.lat = currentLatitude
+                    this.long = currentLongitude
+                    this.address = currentAddress
+                    this.city = currentCity
+                    this.country = currentCountry
+                    this.locality = currentLocality
+                    this.state = currentState
                 }
-                callback.onDataLoaded(locationModelForMap)
+                callback.onDataLoaded(locationModel)
             }
         } catch (e: Exception) {
             e.printStackTrace()

@@ -8,7 +8,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.baldeagles.raksha.R
-import com.baldeagles.raksha.data.models.SafeHouse
 import com.baldeagles.raksha.databinding.FragmentHomeBinding
 import com.baldeagles.raksha.ui.adapters.SafeHouseAdapter
 import com.baldeagles.raksha.ui.viewmodels.MainViewModel
@@ -65,7 +64,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.safeHouses.observe(viewLifecycleOwner) {
             safeHouseAdapter.submitList(it)
         }
-
 
     }
 }

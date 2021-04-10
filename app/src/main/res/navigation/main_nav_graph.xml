@@ -29,7 +29,11 @@
         android:id="@+id/safeHouseFragment"
         android:name="com.baldeagles.raksha.ui.fragments.SafeHouseFragment"
         android:label="fragment_safe_house"
-        tools:layout="@layout/fragment_safe_house" />
+        tools:layout="@layout/fragment_safe_house" >
+        <action
+            android:id="@+id/action_safeHouseFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewSafeHousesInMapFragment"
         android:name="com.baldeagles.raksha.ui.fragments.ViewSafeHousesInMapFragment"

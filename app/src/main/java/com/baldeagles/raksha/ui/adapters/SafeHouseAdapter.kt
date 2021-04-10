@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.baldeagles.raksha.databinding.SafehouseItemBinding
 import com.baldeagles.raksha.data.models.SafeHouse
+import com.baldeagles.raksha.databinding.SafehouseItemBinding
 
 class SafeHouseAdapter() :
     ListAdapter<SafeHouse, SafeHouseAdapter.viewHolder>(DiffCall()) {
@@ -33,7 +33,7 @@ class SafeHouseAdapter() :
             oldItem: SafeHouse,
             newItem: SafeHouse
         ): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.timeStamp == newItem.timeStamp
         }
 
         override fun areContentsTheSame(

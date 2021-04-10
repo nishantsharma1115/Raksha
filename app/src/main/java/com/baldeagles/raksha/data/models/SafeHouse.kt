@@ -5,12 +5,11 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class SafeHouse(
-    @PrimaryKey(autoGenerate = true)
-    val id:Long=0,
-    val name:String="",
-    val lat:Double=0.0,
-    val lon:Double=0.0,
-    val address:String="",
-    val timeStamp:String = System.currentTimeMillis().toString()
+    var name: String = "",
+    var lat: Double = 0.0,
+    var lon: Double = 0.0,
+    var address: String = "",
+    @PrimaryKey
+    val timeStamp: String = System.currentTimeMillis().toString()
 
 )

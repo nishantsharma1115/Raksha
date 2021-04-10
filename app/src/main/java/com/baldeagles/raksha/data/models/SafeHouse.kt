@@ -1,6 +1,11 @@
-package com.baldeagles.raksha.ui.data.models
+package com.baldeagles.raksha.data.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
 data class SafeHouse(
+    @PrimaryKey(autoGenerate = true)
     val id:Long=0,
     val name:String="",
     val lat:Double=0.0,

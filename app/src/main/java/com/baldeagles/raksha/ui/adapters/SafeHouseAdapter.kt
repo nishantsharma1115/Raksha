@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.baldeagles.raksha.databinding.SafehouseItemBinding
-import com.baldeagles.raksha.ui.data.models.SafeHouse
+import com.baldeagles.raksha.data.models.SafeHouse
 
 class SafeHouseAdapter() :
     ListAdapter<SafeHouse, SafeHouseAdapter.viewHolder>(DiffCall()) {

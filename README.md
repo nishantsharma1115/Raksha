@@ -19,7 +19,7 @@
   <a href="https://youtu.be/980R-vV2Inw">https://youtu.be/980R-vV2Inw</a>
   
 ## Presentation Link:
-  <a href="https://drive.google.com/file/d/16ShbmKR2qtuOxGKXALuHbBSbqz869aZA/view?usp=sharing"> https://drive.google.com/file/d/16ShbmKR2qtuOxGKXALuHbBSbqz869aZA/view?usp=sharing </a>
+  <a href="https://docs.google.com/presentation/d/1k2OKHzWCKl8xSXMUHSt3jC18sVlyR2arwK7Yl8QDRnU/edit?usp=sharing"> https://docs.google.com/presentation/d/1k2OKHzWCKl8xSXMUHSt3jC18sVlyR2arwK7Yl8QDRnU/edit?usp=sharing </a>
   
   
 ## Table of Contents:

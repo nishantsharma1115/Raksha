@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/sms_button" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/textView2"
+                android:id="@+id/view_in_map_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
@@ -103,8 +103,10 @@
                 app:layout_constraintTop_toTopOf="@+id/textView" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/safe_house_recycle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -118,11 +120,12 @@
 
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_safe_house_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Safe house"
+        android:text="@string/safe_house"
         app:icon="@drawable/ic_baseline_add_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

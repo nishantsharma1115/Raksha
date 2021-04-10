@@ -5,18 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.baldeagles.raksha.R
 import com.baldeagles.raksha.util.ResponseStatus
-import com.baldeagles.raksha.viewmodels.AddressViewModel
+import com.baldeagles.raksha.ui.viewmodels.AddressViewModel
+import com.baldeagles.raksha.ui.viewmodels.MainViewModel
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.LatLng
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleListener {
 
+    //get this default lat lng value from mainViewModel
     private var latLng = LatLng(25.1933895, 66.5949836)
     private var mGoogleMap: GoogleMap? = null
-    private lateinit var viewModel: AddressViewModel
+    private val viewModel: AddressViewModel by viewModels()
+    private val sharedViewModel:MainViewModel by activityViewModels()
+    //when user confirms location then save in the safeHouseLocation LiveData and navigate back
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,10 +37,9 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnCameraIdleListen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         MapsInitializer.initialize(context)
-        viewModel = ViewModelProvider(this).get(AddressViewModel::class.java)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
-        viewModel.getLocationInformation.observe(viewLifecycleOwner, {
+        viewModel.getLocationInformationForMap.observe(viewLifecycleOwner, {
             it?.let {
                 when (it.status) {
                     ResponseStatus.ERROR -> {

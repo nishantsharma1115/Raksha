@@ -3,7 +3,7 @@ package com.baldeagles.raksha.util
 import android.content.Context
 import android.location.Address
 import android.location.Geocoder
-import com.baldeagles.raksha.ui.data.models.LocationModel
+import com.baldeagles.raksha.data.models.LocationModelForMap
 import com.google.android.gms.common.util.CollectionUtils
 import java.util.*
 
@@ -13,12 +13,12 @@ object GeoCoderUtil {
         context: Context,
         latitude: String,
         longitude: String,
-        callback: LoadDataCallback<LocationModel>
+        callback: LoadDataCallback<LocationModelForMap>
     ) {
         var address = ""
         var cityName = ""
         var areaName = ""
-        val locationModel: LocationModel
+        val locationModelForMap: LocationModelForMap
         try {
             val addresses: MutableList<Address>
             val geocoder = Geocoder(context, Locale.ENGLISH)
@@ -35,12 +35,12 @@ object GeoCoderUtil {
                         areaName = it
                     }
                 }
-                locationModel = LocationModel().apply {
+                locationModelForMap = LocationModelForMap().apply {
                     locationAddress = address
                     locationCityName = cityName
                     locationAreaName = areaName
                 }
-                callback.onDataLoaded(locationModel)
+                callback.onDataLoaded(locationModelForMap)
             }
         } catch (e: Exception) {
             e.printStackTrace()

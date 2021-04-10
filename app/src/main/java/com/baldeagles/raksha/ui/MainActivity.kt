@@ -7,21 +7,26 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.baldeagles.raksha.R
 import com.baldeagles.raksha.databinding.ActivityMainBinding
+import com.baldeagles.raksha.ui.viewmodels.MainViewModel
+import com.baldeagles.raksha.utils.Resource
 import com.baldeagles.raksha.utils.showToast
 import com.vaibhav.nextlife.utils.location.GpsUtils
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private val viewModel: MainViewModel by viewModels()
     var isGPSEnabled = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,25 +78,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startLocationUpdate() {
-//        viewModel.startListeningToLocation()
-//        viewModel.location.observe(this, {
-//            when (it) {
-//                is Resource.Error -> {
-//                    Timber.d("Error")
-//                }
-//                is Resource.Loading -> Timber.d("Loading")
-//                is Resource.Success -> {
-//                    it.data?.let { location ->
-//                        Timber.d("${location.lat} ${location.long} ${location.address} ${location.city}")
-//                        if (viewModel.userLocation.value == null)
-//                            viewModel.setLocation(location)
-//                        viewModel.stopListeningToLocation()
-//                    }
-//
-//                }
-//            }
-//
-//        })
+        viewModel.startListeningToLocation()
+        viewModel.location.observe(this, {
+            when (it) {
+                is Resource.Error -> {
+                    Timber.d("Error")
+                }
+                is Resource.Loading -> Timber.d("Loading")
+                is Resource.Success -> {
+                    it.data?.let { location ->
+                        Timber.d("${location.lat} ${location.long} ${location.address} ${location.city}")
+                        viewModel.setLocation(location)
+                    }
+
+                }
+            }
+
+        })
     }
 
     private fun isPermissionsGranted() =

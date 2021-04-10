@@ -2,4 +2,5 @@
     <string name="app_name">Raksha</string>
     <string name="onboarding1">Add your safe houses view them in map whenever  you need them</string>
     <string name="onboarding2">See all your safe houses  and also all nearby police stations  in your map</string>
+    <string name="safe_house">Safe house</string>
 </resources>

@@ -6,7 +6,7 @@
 
 # **Raksha** 
 
-**Raksha** is app in which users can see the address of the place or people he/she add so that in case of emergency he/she can contact the place or people or stay there. This app demonstrates use of *Modern Android development* tools.
+**Raksha** is app in which users can see the location of the place or people he/she add so that in case of emergency he/she can reach the nearest place or people and stay there. This app demonstrates use of *Modern Android development* tools.
 
 [![Raksha](https://img.shields.io/badge/Raksha✅-APK-red.svg?style=for-the-badge&logo=android)](https://github.com/nishantsharma1115/Raksha/blob/master/testApk/raksha.apk)
 
@@ -25,6 +25,12 @@
   
   
 ## Table of Contents:
+   1) Splash Screen 
+   2) Onboarding Process
+   3) HomeScreen in which users can see all saved SafeHouses
+   4) A map screen which shows all safehouses in a map, which shows users exact location
+   5) A screen to add SafeHouses.
+   6) A map screen to select address of SafeHouse for saving it
 
 ## 📸 Screenshots
 
@@ -51,7 +57,7 @@
 
  # Package Structure
 
-     com.vaibhav.sociofy    # Root Package
+     com.baldeagles.raksha    # Root Package
      .
      ├── data                # For data handling.
      │   ├── model           # Model data classes 
@@ -61,9 +67,9 @@
      │   └── module          # DI Modules
      |
      ├── ui                  # UI/View layer
-     │   ├── homescreen      # Home Activity and its fragments
-     |   ├── onboarding      # Onboarding Activity and its files
-     │   └── splashScreen    # SplashScreen Activity
+     │   ├── viewmodels      # All viewmodels
+     |   ├── fragments        # All fragments
+     │   └── adapters        # All recyclerView adapters 
      |
      └── utils               # Utility Classes / Kotlin extensions
 
@@ -76,7 +82,11 @@
 ## Technology Stack:
   1) Kotlin
   2) XML
-  3) Adobe XD
+  3) Android Jetpack
+  4) Android Architecture Components
+  5) Google Maps SDK
+  6) SQLite database using room
+  7) Adobe XD
   
 
 ## Contributors:

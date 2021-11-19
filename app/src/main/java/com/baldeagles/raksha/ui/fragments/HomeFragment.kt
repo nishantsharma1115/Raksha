@@ -19,6 +19,7 @@ import com.baldeagles.raksha.R
 import com.baldeagles.raksha.databinding.FragmentHomeBinding
 import com.baldeagles.raksha.ui.adapters.SafeHouseAdapter
 import com.baldeagles.raksha.ui.viewmodels.MainViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -62,6 +63,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
                 viewModel.deleteSafeHouse(safeHouseAdapter.currentList[position])
+                Snackbar.make(
+                    binding.root,
+                    "Address Removed",
+                    Snackbar.LENGTH_SHORT
+                ).show()
             }
         }
 

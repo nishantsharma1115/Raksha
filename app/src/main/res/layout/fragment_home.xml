@@ -75,6 +75,7 @@
                 android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Button"
                 android:textColor="@color/pink"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/whatsapp_btn" />
@@ -87,8 +88,8 @@
                 android:text="Your Safe Houses"
                 android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Headline5"
                 android:textColor="?attr/colorOnBackground"
-                app:layout_constraintStart_toStartOf="@+id/sms_button"
-                app:layout_constraintTop_toBottomOf="@+id/sms_button" />
+                app:layout_constraintStart_toStartOf="@+id/whatsapp_btn"
+                app:layout_constraintTop_toBottomOf="@+id/whatsapp_btn" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/view_in_map_button"
@@ -99,7 +100,7 @@
                 android:textAppearance="@style/TextAppearance.MdcTypographyStyles.Body2"
                 android:textColor="?attr/colorOnBackground"
                 app:layout_constraintBottom_toBottomOf="@+id/textView"
-                app:layout_constraintEnd_toEndOf="@+id/sms_button"
+                app:layout_constraintEnd_toEndOf="@+id/whatsapp_btn"
                 app:layout_constraintTop_toTopOf="@+id/textView" />
 
             <androidx.recyclerview.widget.RecyclerView
